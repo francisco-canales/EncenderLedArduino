@@ -17,141 +17,167 @@
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.lblTitulo = new Label();
-            this.lblPuerto = new Label();
-            this.cmbPuertos = new ComboBox();
-            this.btnConectar = new Button();
-            this.btnEncender = new Button();
-            this.btnApagar = new Button();
-            this.lblEstado = new Label();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.lblStatusConexion = new Label();
-            this.SuspendLayout();
-            //
+            components = new System.ComponentModel.Container();
+            System.Text.ASCIIEncoding asciiEncodingSealed1 = new System.Text.ASCIIEncoding();
+            System.Text.DecoderReplacementFallback decoderReplacementFallback1 = new System.Text.DecoderReplacementFallback();
+            System.Text.EncoderReplacementFallback encoderReplacementFallback1 = new System.Text.EncoderReplacementFallback();
+            lblTitulo = new Label();
+            lblPuerto = new Label();
+            cmbPuertos = new ComboBox();
+            btnConectar = new Button();
+            btnEncender = new Button();
+            btnApagar = new Button();
+            lblEstado = new Label();
+            serialPort1 = new System.IO.Ports.SerialPort(components);
+            lblStatusConexion = new Label();
+            SuspendLayout();
+            // 
             // lblTitulo
-            //
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            this.lblTitulo.ForeColor = Color.FromArgb(30, 30, 30);
-            this.lblTitulo.Location = new Point(180, 20);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new Size(320, 32);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Control de LED con Arduino";
-            //
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.FromArgb(30, 30, 30);
+            lblTitulo.Location = new Point(206, 27);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(409, 41);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Control de LED con Arduino";
+            // 
             // lblPuerto
-            //
-            this.lblPuerto.AutoSize = true;
-            this.lblPuerto.Font = new Font("Segoe UI", 10F);
-            this.lblPuerto.Location = new Point(40, 80);
-            this.lblPuerto.Name = "lblPuerto";
-            this.lblPuerto.Size = new Size(100, 19);
-            this.lblPuerto.TabIndex = 1;
-            this.lblPuerto.Text = "Puerto COM:";
-            //
+            // 
+            lblPuerto.AutoSize = true;
+            lblPuerto.Font = new Font("Segoe UI", 10F);
+            lblPuerto.Location = new Point(46, 107);
+            lblPuerto.Name = "lblPuerto";
+            lblPuerto.Size = new Size(109, 23);
+            lblPuerto.TabIndex = 1;
+            lblPuerto.Text = "Puerto COM:";
+            // 
             // cmbPuertos
-            //
-            this.cmbPuertos.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.cmbPuertos.Font = new Font("Segoe UI", 10F);
-            this.cmbPuertos.Location = new Point(150, 77);
-            this.cmbPuertos.Name = "cmbPuertos";
-            this.cmbPuertos.Size = new Size(150, 27);
-            this.cmbPuertos.TabIndex = 2;
-            //
+            // 
+            cmbPuertos.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPuertos.Font = new Font("Segoe UI", 10F);
+            cmbPuertos.Location = new Point(171, 103);
+            cmbPuertos.Margin = new Padding(3, 4, 3, 4);
+            cmbPuertos.Name = "cmbPuertos";
+            cmbPuertos.Size = new Size(171, 31);
+            cmbPuertos.TabIndex = 2;
+            // 
             // btnConectar
-            //
-            this.btnConectar.BackColor = Color.FromArgb(0, 122, 204);
-            this.btnConectar.FlatStyle = FlatStyle.Flat;
-            this.btnConectar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            this.btnConectar.ForeColor = Color.White;
-            this.btnConectar.Location = new Point(320, 75);
-            this.btnConectar.Name = "btnConectar";
-            this.btnConectar.Size = new Size(120, 32);
-            this.btnConectar.TabIndex = 3;
-            this.btnConectar.Text = "Conectar";
-            this.btnConectar.UseVisualStyleBackColor = false;
-            this.btnConectar.Click += new EventHandler(this.btnConectar_Click);
-            //
+            // 
+            btnConectar.BackColor = Color.FromArgb(0, 122, 204);
+            btnConectar.FlatStyle = FlatStyle.Flat;
+            btnConectar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnConectar.ForeColor = Color.White;
+            btnConectar.Location = new Point(366, 100);
+            btnConectar.Margin = new Padding(3, 4, 3, 4);
+            btnConectar.Name = "btnConectar";
+            btnConectar.Size = new Size(137, 43);
+            btnConectar.TabIndex = 3;
+            btnConectar.Text = "Conectar";
+            btnConectar.UseVisualStyleBackColor = false;
+            btnConectar.Click += btnConectar_Click;
+            // 
             // btnEncender
-            //
-            this.btnEncender.BackColor = Color.FromArgb(40, 167, 69);
-            this.btnEncender.Enabled = false;
-            this.btnEncender.FlatStyle = FlatStyle.Flat;
-            this.btnEncender.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            this.btnEncender.ForeColor = Color.White;
-            this.btnEncender.Location = new Point(100, 160);
-            this.btnEncender.Name = "btnEncender";
-            this.btnEncender.Size = new Size(200, 80);
-            this.btnEncender.TabIndex = 4;
-            this.btnEncender.Text = "ENCENDER";
-            this.btnEncender.UseVisualStyleBackColor = false;
-            this.btnEncender.Click += new EventHandler(this.btnEncender_Click);
-            //
+            // 
+            btnEncender.BackColor = Color.FromArgb(40, 167, 69);
+            btnEncender.Enabled = false;
+            btnEncender.FlatStyle = FlatStyle.Flat;
+            btnEncender.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            btnEncender.ForeColor = Color.White;
+            btnEncender.Location = new Point(114, 213);
+            btnEncender.Margin = new Padding(3, 4, 3, 4);
+            btnEncender.Name = "btnEncender";
+            btnEncender.Size = new Size(229, 107);
+            btnEncender.TabIndex = 4;
+            btnEncender.Text = "ENCENDER";
+            btnEncender.UseVisualStyleBackColor = false;
+            btnEncender.Click += btnEncender_Click;
+            // 
             // btnApagar
-            //
-            this.btnApagar.BackColor = Color.FromArgb(220, 53, 69);
-            this.btnApagar.Enabled = false;
-            this.btnApagar.FlatStyle = FlatStyle.Flat;
-            this.btnApagar.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            this.btnApagar.ForeColor = Color.White;
-            this.btnApagar.Location = new Point(340, 160);
-            this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new Size(200, 80);
-            this.btnApagar.TabIndex = 5;
-            this.btnApagar.Text = "APAGAR";
-            this.btnApagar.UseVisualStyleBackColor = false;
-            this.btnApagar.Click += new EventHandler(this.btnApagar_Click);
-            //
+            // 
+            btnApagar.BackColor = Color.FromArgb(220, 53, 69);
+            btnApagar.Enabled = false;
+            btnApagar.FlatStyle = FlatStyle.Flat;
+            btnApagar.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            btnApagar.ForeColor = Color.White;
+            btnApagar.Location = new Point(389, 213);
+            btnApagar.Margin = new Padding(3, 4, 3, 4);
+            btnApagar.Name = "btnApagar";
+            btnApagar.Size = new Size(229, 107);
+            btnApagar.TabIndex = 5;
+            btnApagar.Text = "APAGAR";
+            btnApagar.UseVisualStyleBackColor = false;
+            btnApagar.Click += btnApagar_Click;
+            // 
             // lblEstado
-            //
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            this.lblEstado.ForeColor = Color.Gray;
-            this.lblEstado.Location = new Point(250, 270);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new Size(180, 21);
-            this.lblEstado.TabIndex = 6;
-            this.lblEstado.Text = "LED: APAGADO";
-            this.lblEstado.TextAlign = ContentAlignment.MiddleCenter;
-            //
-            // lblStatusConexion
-            //
-            this.lblStatusConexion.AutoSize = true;
-            this.lblStatusConexion.Font = new Font("Segoe UI", 9F);
-            this.lblStatusConexion.ForeColor = Color.Red;
-            this.lblStatusConexion.Location = new Point(460, 82);
-            this.lblStatusConexion.Name = "lblStatusConexion";
-            this.lblStatusConexion.Size = new Size(120, 15);
-            this.lblStatusConexion.TabIndex = 7;
-            this.lblStatusConexion.Text = "Desconectado";
-            //
+            // 
+            lblEstado.AutoSize = true;
+            lblEstado.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblEstado.ForeColor = Color.Gray;
+            lblEstado.Location = new Point(286, 360);
+            lblEstado.Name = "lblEstado";
+            lblEstado.Size = new Size(156, 28);
+            lblEstado.TabIndex = 6;
+            lblEstado.Text = "LED: APAGADO";
+            lblEstado.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // serialPort1
-            //
-            this.serialPort1.BaudRate = 9600;
-            //
+            // 
+            serialPort1.BaudRate = 9600;
+            serialPort1.DataBits = 8;
+            serialPort1.DiscardNull = false;
+            serialPort1.DtrEnable = false;
+            asciiEncodingSealed1.DecoderFallback = decoderReplacementFallback1;
+            asciiEncodingSealed1.EncoderFallback = encoderReplacementFallback1;
+            serialPort1.Encoding = asciiEncodingSealed1;
+            serialPort1.Handshake = System.IO.Ports.Handshake.None;
+            serialPort1.NewLine = "\n";
+            serialPort1.Parity = System.IO.Ports.Parity.None;
+            serialPort1.ParityReplace = 63;
+            serialPort1.PortName = "COM1";
+            serialPort1.ReadBufferSize = 4096;
+            serialPort1.ReadTimeout = -1;
+            serialPort1.ReceivedBytesThreshold = 1;
+            serialPort1.RtsEnable = false;
+            serialPort1.StopBits = System.IO.Ports.StopBits.One;
+            serialPort1.WriteBufferSize = 2048;
+            serialPort1.WriteTimeout = -1;
+            // 
+            // lblStatusConexion
+            // 
+            lblStatusConexion.AutoSize = true;
+            lblStatusConexion.Font = new Font("Segoe UI", 9F);
+            lblStatusConexion.ForeColor = Color.Red;
+            lblStatusConexion.Location = new Point(526, 109);
+            lblStatusConexion.Name = "lblStatusConexion";
+            lblStatusConexion.Size = new Size(104, 20);
+            lblStatusConexion.TabIndex = 7;
+            lblStatusConexion.Text = "Desconectado";
+            // 
             // Form1
-            //
-            this.AutoScaleDimensions = new SizeF(7F, 15F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.FromArgb(240, 240, 240);
-            this.ClientSize = new Size(640, 330);
-            this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.lblPuerto);
-            this.Controls.Add(this.cmbPuertos);
-            this.Controls.Add(this.btnConectar);
-            this.Controls.Add(this.btnEncender);
-            this.Controls.Add(this.btnApagar);
-            this.Controls.Add(this.lblEstado);
-            this.Controls.Add(this.lblStatusConexion);
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "Form1";
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.Text = "Control LED Arduino";
-            this.Load += new EventHandler(this.Form1_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(240, 240, 240);
+            ClientSize = new Size(731, 440);
+            Controls.Add(lblTitulo);
+            Controls.Add(lblPuerto);
+            Controls.Add(cmbPuertos);
+            Controls.Add(btnConectar);
+            Controls.Add(btnEncender);
+            Controls.Add(btnApagar);
+            Controls.Add(lblEstado);
+            Controls.Add(lblStatusConexion);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "<z";
+            Load += Form1_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

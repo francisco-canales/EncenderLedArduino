@@ -1,4 +1,4 @@
-const int LED_PIN = 10;
+const int LED_PIN = LED_BUILTIN;
 
 void setup() {
   Serial.begin(9600);
